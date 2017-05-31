@@ -1,0 +1,85 @@
+* {
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.text {
+    width: 300px;
+    text-transform: uppercase;
+    font-size: 30px;
+    position: absolute;
+}
+.picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    /*border: 1px solid yellow;*/
+}
+#picture1 {
+    background-image: url('../images/sprite.png');
+    background-repeat: no-repeat;
+    background-position: -100px -100px;
+    top: -135px;
+    left: 525px;
+    animation: fallDownPicture;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#picture2{
+    background-image: url('../images/sprite.png');
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+    top: -135px;
+    left: 525px;
+}
+#picture3 {
+    background-image: url('../images/sprite.png');
+    background-repeat: no-repeat;
+    background-position: -200px -100px;
+    top: -135px;
+    left: 525px;
+}
+#picture4 {
+    background-image: url('../images/sprite.png');
+    background-repeat: no-repeat;
+    background-position: -300px -100px;
+    top: -135px;
+    left: 525px;
+}
+#text1 {
+    top: -100px;
+    left: 175px;
+    animation: fallDownText;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#text2 {
+    top: -100px;
+    left: 175px;
+}
+#text3 {
+    top: -100px;
+    left: 175px;
+}
+#text4 {
+    top: -100px;
+    left: 175px;
+}
+
+@keyframes fallDownText {
+    0% {top: -100px;}
+    100% {top: 85px;}
+}
+@keyframes fallDownPicture {
+    0% {top: -135px;}
+    100% {top: 50px;}
+}
