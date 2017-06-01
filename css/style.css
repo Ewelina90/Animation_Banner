@@ -2,7 +2,7 @@
     font-family: 'Arial', sans-serif;
 }
 .container {
-    width: 800px;
+    width: 1000px;
     height: 600px;
     margin: 0 auto;
     position: relative;
@@ -29,63 +29,75 @@
     background-image: url('../images/sprite.png');
     background-repeat: no-repeat;
     background-position: -100px -100px;
+    animation: changeColor 0.25s 5s steps(1) forwards,
+    rotateLeft 1s 6s infinite linear forwards;
 }
 #picture2{
     background-image: url('../images/sprite.png');
     background-repeat: no-repeat;
     background-position: 0 -100px;
+    animation: changeColor 0.25s 5.25s steps(1) forwards,
+    rotateRight 1s 6s infinite linear forwards;
 }
 #picture3 {
     background-image: url('../images/sprite.png');
     background-repeat: no-repeat;
     background-position: -200px -100px;
+    animation: changeColor 0.25s 5.5s steps(1) forwards,
+    rotateLeft 1s 6s infinite linear forwards;
 }
 #picture4 {
     background-image: url('../images/sprite.png');
     background-repeat: no-repeat;
     background-position: -300px -100px;
+    animation: changeColor 0.25s 5.75s steps(1) forwards,
+    rotateRight 1s 6s infinite linear forwards;
 }
 #row1 {
     top: -100px;
-    left: 100px;
-    animation: fallDownText1;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    left: 200px;
+    animation: fallDownText1 1s 1 linear forwards,
+    split 1s 4s 1 linear forwards,
+    toLeft 2s 6s 1 linear forwards;
 }
 #row2 {
     top: -100px;
-    left: 100px;
-    animation: fallDownText2;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    left: 200px;
+    animation: fallDownText2 1s 1s 1 linear forwards,
+    split 1s 4.25s 1 linear forwards,
+    toRight 2s 6s 1 linear forwards;
 }
 #row3 {
     top: -100px;
-    left: 100px;
-    animation: fallDownText3;
-    animation-duration: 1s;
-    animation-delay: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    left: 200px;
+    animation: fallDownText3 1s 2s 1 linear forwards,
+    split 1s 4.5s 1 linear forwards,
+    toLeft 2s 6s 1 linear forwards;
 }
 #row4 {
     top: -100px;
+    left: 200px;
+    animation: fallDownText4 1s 3s 1 linear forwards,
+    split 1s 4.75s 1 linear forwards,
+    toRight 2s 6s 1 linear forwards;
+}
+#row5 {
+    top: 100px;
+    left: 250px;
+    display: none;
+}
+#row6 {
+    top: -100px;
     left: 100px;
-    animation: fallDownText4;
-    animation-duration: 1s;
-    animation-delay: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    display: none;
+}
+#row7 {
+    top: 300px;
+    left: 250px;
+    display: none;
 }
 @keyframes fallDownText1 {
-    
+    0% {top: -100px;}
     100% {top: 75px;}
 }
 @keyframes fallDownText2 {
@@ -99,4 +111,28 @@
 @keyframes fallDownText4 {
     0% {top: -100px;}
     100% {top: 435px;}
+}
+@keyframes split{
+    from {justify-content: center;}
+    to {justify-content: space-between;}
+}
+@keyframes changeColor {
+    from {background-position-y: -100px;}
+    to {background-position-y: 0}
+}
+@keyframes toRight {
+    0% {left: 200px;}
+    100% {left: 1300px;}
+}
+@keyframes rotateRight {
+    0% {origin: 50% 50%; transform: rotate(0deg);}
+    100% {origin: 50% 50%; transform: rotate(360deg);}
+}
+@keyframes toLeft {
+    0% {left: 200px;}
+    100% {left: -1000px;}
+}
+@keyframes rotateLeft {
+    0% {origin: 50% 50%; transform: rotate(0deg);}
+    100% {origin: 50% 50%; transform: rotate(-360deg);}
 }
